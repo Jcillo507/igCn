@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 
@@ -7,6 +7,7 @@ import insta from "../images/iphone-with-profile.jpg"
 import logo from '../images/logo.png'
 
 const Login = () => {
+  const history = useHistory()
   const { firebase } = useContext(FirebaseContext);
 
   const [emailAddress, setEmailAddress] = useState('');
@@ -19,11 +20,11 @@ const Login = () => {
     event.preventDefault();
     try {
       await firebase.auth().signInWithEmailAndPassword(emailAddress, password);
+      history.push(ROUTES.DASHBOARD)
     } catch (error) {
       setEmailAddress('');
       setPassword('');
       setError(error.message);
-      console.log(error)
     }
   }
 
@@ -73,7 +74,7 @@ const Login = () => {
             Don't have an account?{' '}
             <Link to={ROUTES.SIGN_UP} className="font-bold">
               Sign up
-                        </Link>
+            </Link>
           </p>
         </div>
       </div>
