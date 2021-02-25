@@ -1,19 +1,19 @@
-// import { seedDatabase } from './seed'
+import { seedDatabase } from './seed'
 
 const config = {
-  apiKey: "AIzaSyBkj7y4vhbf6nqedoz6xVLH2EXgZCVbDI4",
-  authDomain: "instagramclone-d98fc.firebaseapp.com",
-  databaseURL: "https://instagramclone-d98fc.firebaseio.com",
-  projectId: "instagramclone-d98fc",
-  storageBucket: "instagramclone-d98fc.appspot.com",
-  messagingSenderId: "320519598039",
-  appId: "1:320519598039:web:413dbcbc60bbd1aab1e592",
-  measurementId: "G-MEJ3LQYS83"
+  apiKey: "AIzaSyCUie--RaJAd5_wx6kAP2tF8OuNSsNeZMI",
+  authDomain: "instaclone-34129.firebaseapp.com",
+  projectId: "instaclone-34129",
+  databaseURL: "https://instaclone-34129.firebaseio.com",
+  storageBucket: "instaclone-34129.appspot.com",
+  messagingSenderId: "1204295200",
+  appId: "1:1204295200:web:5c770d6f1ef7755f2c8e45",
+  measurementId: "G-YZX95ST1WR"
 }
 
 const firebaseApp = window.firebase.initializeApp(config);
 const { FieldValue } = window.firebase.firestore;
 
-// seedDatabase(firebaseApp)
+seedDatabase(firebaseApp)
 
 export { firebaseApp, FieldValue }
